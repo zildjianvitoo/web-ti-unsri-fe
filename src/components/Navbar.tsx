@@ -81,9 +81,10 @@ export default function Navbar() {
   return (
     <nav
       className={cn(
-        "fixed left-0 top-0 z-20 w-full bg-background p-4 text-black transition lg:px-12 xl:px-20",
+        "fixed left-0 top-0 z-20 w-full bg-background p-4 text-black transition dark:text-white lg:px-12 xl:px-20",
         {
-          "glassmorphism fixed top-0 mt-0 w-full": isFixedPosition,
+          "glassmorphism-navbar dark:glassmorphism-navbar-dark fixed top-0 mt-0 w-full":
+            isFixedPosition,
         },
       )}
     >
