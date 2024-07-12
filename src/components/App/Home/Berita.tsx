@@ -2,7 +2,10 @@ import { FaCalendar } from "react-icons/fa";
 
 export default function Berita() {
   return (
-    <section className="mx-auto mt-10 px-4 lg:mt-16 xl:px-20" id="berita">
+    <section
+      className="mx-auto mt-10 px-4 lg:mt-16 lg:px-12 xl:px-20"
+      id="berita"
+    >
       <div className="flex flex-col gap-7 lg:gap-10">
         <h1 className="text-center text-3xl font-bold md:text-4xl">Berita</h1>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
@@ -17,7 +20,7 @@ export default function Berita() {
                 Lorem ipsum dolor sit amet, adipiscing Etiam eu turpis.
               </h3>
               <div className="flex gap-1">
-                <FaCalendar className="size-5" />
+                <FaCalendar className="size-5 text-[#5c5839]" />
                 <p className="text-sm">29 Jan 2024</p>
               </div>
             </div>
@@ -42,7 +45,7 @@ export default function Berita() {
                 Lorem ipsum dolor sit amet, adipiscing Etiam eu turpis.
               </h3>
               <div className="flex gap-1">
-                <FaCalendar className="size-5" />
+                <FaCalendar className="size-5 text-[#5c5839]" />
                 <p className="text-sm">29 Jan 2024</p>
               </div>
             </div>

@@ -28,7 +28,7 @@ const dummyData = [
 export default function TenagaPendidik() {
   return (
     <section
-      className="mx-auto mt-10 px-4 lg:mt-16 xl:px-20"
+      className="mx-auto mt-10 px-4 lg:mt-16 lg:px-12 xl:px-20"
       id="tenaga-pendidik"
     >
       <div className="flex flex-col gap-7 lg:gap-10">

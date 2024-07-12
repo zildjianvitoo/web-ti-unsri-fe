@@ -49,11 +49,11 @@ export default function Pengumuman() {
           </div>
         </div>
 
-        <div className="grid w-full grid-cols-1 gap-x-10 gap-y-8 px-4 md:grid-cols-2 md:gap-y-12 lg:mt-10 lg:grid-cols-3 xl:px-20">
+        <div className="grid w-full grid-cols-1 gap-x-10 gap-y-8 px-4 md:grid-cols-2 md:gap-y-12 lg:mt-10 lg:grid-cols-3 lg:px-12 xl:px-20">
           {dummyData.map((item, index) => (
             <div key={index} className="flex flex-col gap-4">
               <figure>
-                <img src={item.image} alt="Dummy" className="rounded-xl" />
+                <img src={item.image} alt="Dummy" className="rounded-md" />
               </figure>
               <div className="flex flex-col gap-2">
                 <h3 className="text-xl font-semibold md:text-2xl">

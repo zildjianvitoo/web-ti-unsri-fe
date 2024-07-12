@@ -1,6 +1,9 @@
 export default function Pengumuman() {
   return (
-    <section className="mx-auto mt-10 px-4 lg:mt-16 xl:px-20" id="pengumuman">
+    <section
+      className="mx-auto mt-10 px-4 lg:mt-16 lg:px-12 xl:px-20"
+      id="pengumuman"
+    >
       <div className="flex flex-col gap-7 lg:gap-10">
         <h1 className="text-3xl font-bold md:text-4xl">Pengumuman</h1>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-y-10">
