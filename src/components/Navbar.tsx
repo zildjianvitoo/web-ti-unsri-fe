@@ -21,8 +21,8 @@ const navItems = [
     path: "/profile",
     children: [
       {
-        name: "asasa",
-        path: "/asasas",
+        name: "Informasi Jurusan",
+        path: "/informasi-jurusan",
       },
       {
         name: "asasa",

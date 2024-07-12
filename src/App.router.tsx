@@ -6,6 +6,7 @@ import Pengumuman from "./pages/Pengumuman/Pengumuman";
 import PengumumanDetail from "./pages/Pengumuman/PengumumanDetail";
 import Berita from "./pages/Berita/Berita";
 import BeritaDetail from "./pages/Berita/BeritaDetail";
+import InformasiJurusan from "./pages/InformasiJurusan/InformasiJurusan";
 
 const RouterBuilder = () => {
   //Only for client to see
@@ -29,6 +30,10 @@ const RouterBuilder = () => {
     {
       path: `/berita/:beritaId`,
       element: <BeritaDetail />,
+    },
+    {
+      path: `/informasi-jurusan`,
+      element: <InformasiJurusan />,
     },
 
     {
