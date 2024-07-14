@@ -10,6 +10,7 @@ import {
   MenubarTrigger,
 } from "./ui/menubar";
 import { ChevronDown } from "lucide-react";
+import { useTheme } from "@/hooks/useTheme";
 
 const navItems = [
   {
@@ -61,6 +62,7 @@ const navItems = [
 export default function Navbar() {
   const [isFixedPosition, setIsPositionFixed] = useState(false);
   const { pathname } = useLocation();
+  const { theme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -94,7 +96,11 @@ export default function Navbar() {
           className="flex w-fit items-center space-x-3 rtl:space-x-reverse"
         >
           <img
-            src="/images/logo-teknikinformatika.png"
+            src={
+              theme === "light"
+                ? "/images/logo-teknikinformatika.png"
+                : "/images/logo-ti-dark.png"
+            }
             alt="Logo Teknik Informatika"
             className="h-[50px] w-[200px] object-contain"
           />

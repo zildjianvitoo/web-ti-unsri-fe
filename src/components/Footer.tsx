@@ -1,3 +1,4 @@
+import { useTheme } from "@/hooks/useTheme";
 import { AiFillInstagram } from "react-icons/ai";
 import { BsFillTelephoneFill } from "react-icons/bs";
 import { FaLinkedin, FaTwitter } from "react-icons/fa";
@@ -6,6 +7,8 @@ import { IoMdMail } from "react-icons/io";
 import { Link } from "react-router-dom";
 
 export default function Footer() {
+  const { theme } = useTheme();
+  console.log(theme);
   return (
     <footer
       id="footer"
@@ -17,7 +20,11 @@ export default function Footer() {
             <div className="flex w-fit flex-col gap-3 lg:max-w-[40%]">
               <figure>
                 <img
-                  src={"/images/logo-ti-footer.png"}
+                  src={
+                    theme === "light"
+                      ? "/images/logo-ti-footer.png"
+                      : "/images/logo-ti-footer-dark.png"
+                  }
                   alt="Logo BP2MI"
                   width={230}
                   height={80}
@@ -34,19 +41,22 @@ export default function Footer() {
 
             <div className="flex w-full flex-col gap-8 tracking-wide max-lg:justify-between md:flex-row lg:gap-14 xl:gap-20">
               <div className="flex flex-col gap-3 md:gap-6">
-                <h4 className="w-fit text-lg font-bold text-black lg:text-xl">
+                <h4 className="w-fit text-lg font-bold text-black dark:text-white lg:text-xl">
                   Pages
                 </h4>
-                <ul className="flex flex-col gap-3 text-base text-slate-500 md:gap-4 md:text-lg lg:mt-6">
+                <ul className="flex flex-col gap-3 text-base text-slate-500 dark:text-slate-200 md:gap-4 md:text-lg lg:mt-6">
                   <li>
-                    <Link to={"/"} className="duration-200 hover:text-black">
+                    <Link
+                      to={"/"}
+                      className="duration-200 hover:text-black dark:hover:text-slate-100"
+                    >
                       Beranda
                     </Link>
                   </li>
                   <li>
                     <Link
                       to={"/pengumuman"}
-                      className="duration-200 hover:text-black"
+                      className="duration-200 hover:text-black dark:hover:text-slate-100"
                     >
                       Pengumuman
                     </Link>
@@ -54,7 +64,7 @@ export default function Footer() {
                   <li>
                     <Link
                       to={"/berita"}
-                      className="duration-200 hover:text-black"
+                      className="duration-200 hover:text-black dark:hover:text-slate-100"
                     >
                       Berita
                     </Link>
@@ -62,15 +72,15 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="flex flex-col gap-3 md:gap-6">
-                <h4 className="w-fit text-lg font-bold text-black lg:text-xl">
+                <h4 className="w-fit text-lg font-bold text-black dark:text-white lg:text-xl">
                   Detail
                 </h4>
-                <ul className="flex flex-row gap-6 text-base text-slate-500 md:gap-4 md:text-lg lg:mt-6">
+                <ul className="flex flex-row gap-6 text-base text-slate-500 dark:text-slate-200 md:gap-4 md:text-lg lg:mt-6">
                   <div className="flex flex-col gap-3">
                     <li>
                       <Link
                         to={"/informasi-jurusan"}
-                        className="duration-200 hover:text-black"
+                        className="duration-200 hover:text-black dark:hover:text-slate-100"
                       >
                         Informasi Jurusan
                       </Link>
@@ -78,7 +88,7 @@ export default function Footer() {
                     <li>
                       <Link
                         to={"/kurikulum"}
-                        className="duration-200 hover:text-black"
+                        className="duration-200 hover:text-black dark:hover:text-slate-100"
                       >
                         Kurikulum
                       </Link>
@@ -86,7 +96,7 @@ export default function Footer() {
                     <li>
                       <Link
                         to={"/struktur-jabatan"}
-                        className="duration-200 hover:text-black"
+                        className="duration-200 hover:text-black dark:hover:text-slate-100"
                       >
                         Struktur Jabatan
                       </Link>
@@ -96,7 +106,7 @@ export default function Footer() {
                     <li>
                       <Link
                         to={"/sarana-dan-prasarana"}
-                        className="duration-200 hover:text-black"
+                        className="duration-200 hover:text-black dark:hover:text-slate-100"
                       >
                         Sarana & Prasarana
                       </Link>
@@ -104,7 +114,7 @@ export default function Footer() {
                     <li>
                       <Link
                         to={"/tenaga-pendidik"}
-                        className="duration-200 hover:text-black"
+                        className="duration-200 hover:text-black dark:hover:text-slate-100"
                       >
                         Tenaga Pendidik
                       </Link>
@@ -112,7 +122,7 @@ export default function Footer() {
                     <li>
                       <Link
                         to={"/profil-lulusan"}
-                        className="duration-200 hover:text-black"
+                        className="duration-200 hover:text-black dark:hover:text-slate-100"
                       >
                         Profil Lulusan
                       </Link>
@@ -121,14 +131,14 @@ export default function Footer() {
                 </ul>
               </div>
               <div className="flex flex-col gap-3 md:gap-6">
-                <h4 className="w-fit text-lg font-bold text-black lg:text-xl">
+                <h4 className="w-fit text-lg font-bold text-black dark:text-white lg:text-xl">
                   Contact
                 </h4>
-                <ul className="flex flex-col gap-3 text-base text-slate-500 md:gap-4 md:text-lg">
+                <ul className="flex flex-col gap-3 text-base text-slate-500 dark:text-slate-200 md:gap-4 md:text-lg">
                   <li>
                     <a
                       href={"#"}
-                      className="flex items-center gap-2 duration-200 hover:text-black"
+                      className="flex items-center gap-2 duration-200 hover:text-black dark:hover:text-slate-100"
                     >
                       <BsFillTelephoneFill />
                       (+62) 123-456-789
@@ -137,7 +147,7 @@ export default function Footer() {
                   <li>
                     <a
                       href={"#"}
-                      className="flex items-center gap-2 duration-200 hover:text-black"
+                      className="flex items-center gap-2 duration-200 hover:text-black dark:hover:text-slate-100"
                     >
                       <IoMdMail />
                       if.unsri@blabla.ac.id
@@ -146,7 +156,7 @@ export default function Footer() {
                   <li>
                     <a
                       href={"#"}
-                      className="flex items-center gap-2 break-keep text-base duration-200 hover:text-black"
+                      className="flex items-center gap-2 break-keep text-base duration-200 hover:text-black dark:hover:text-slate-100"
                     >
                       <FaLocationDot />
                       Indralaya, Sumatera Selatan
@@ -174,7 +184,7 @@ export default function Footer() {
             <AiFillInstagram />
           </a>
         </div>
-        <div className="hidden h-[2px] bg-black/20 lg:block lg:w-[30%]" />
+        <div className="hidden h-[2px] bg-black/20 dark:bg-white lg:block lg:w-[30%]" />
         <p className="text-base max-sm:mt-2">
           © Copyright 2024, Designed and Developed by{" "}
           <strong>Teknik Informatika Universitas Sriwijaya</strong>

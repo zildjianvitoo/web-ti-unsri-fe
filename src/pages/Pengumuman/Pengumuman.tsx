@@ -49,8 +49,8 @@ export default function Pengumuman() {
                   {item.title}
                 </h3>
                 <div className="flex items-center gap-2">
-                  <FaCalendar className="size-4 text-[#5c5839]" />
-                  <p className="mt-[2px] text-sm font-medium text-[#696969]">
+                  <FaCalendar className="size-4 text-[#5c5839] dark:text-white" />
+                  <p className="mt-[2px] text-sm font-medium text-[#696969] dark:text-white">
                     {item.date}
                   </p>
                 </div>

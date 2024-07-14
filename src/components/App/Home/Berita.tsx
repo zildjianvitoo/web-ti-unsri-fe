@@ -20,7 +20,7 @@ export default function Berita() {
                 Lorem ipsum dolor sit amet, adipiscing Etiam eu turpis.
               </h3>
               <div className="flex gap-1">
-                <FaCalendar className="size-5 text-[#5c5839]" />
+                <FaCalendar className="size-5 text-[#5c5839] dark:text-white" />
                 <p className="text-sm">29 Jan 2024</p>
               </div>
             </div>
@@ -45,7 +45,7 @@ export default function Berita() {
                 Lorem ipsum dolor sit amet, adipiscing Etiam eu turpis.
               </h3>
               <div className="flex gap-1">
-                <FaCalendar className="size-5 text-[#5c5839]" />
+                <FaCalendar className="size-5 text-[#5c5839] dark:text-white" />
                 <p className="text-sm">29 Jan 2024</p>
               </div>
             </div>

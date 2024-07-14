@@ -17,7 +17,7 @@ export default function InformasiJurusan() {
             dignissim, metus nec fringilla accumsan, risus sem sollicitudin
             lacus,{" "}
           </p>
-          <button className="mt-2 flex w-fit items-center gap-1 break-all rounded-full border bg-white px-3 py-1 lg:px-6">
+          <button className="mt-2 flex w-fit items-center gap-1 break-all rounded-full border bg-white px-3 py-1 text-black outline-none ring-0 lg:px-6">
             Info Lanjut
             <FiArrowUpRight className="size-5" />
           </button>
@@ -32,8 +32,9 @@ export default function InformasiJurusan() {
             dignissim, metus nec fringilla accumsan, risus sem sollicitudin
             lacus,{" "}
           </p>
-          <button className="mt-2 w-fit border border-primary">
+          <button className="mt-2 flex w-fit items-center gap-1 break-all rounded-full border bg-white px-3 py-1 text-black outline-none ring-0 lg:px-6">
             Info Lanjut
+            <FiArrowUpRight className="size-5" />
           </button>
         </div>
       </div>

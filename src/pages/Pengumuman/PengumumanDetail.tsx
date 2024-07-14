@@ -13,8 +13,8 @@ export default function PengumumanDetail() {
             Turpis.
           </h1>
           <div className="mt-2 flex gap-2">
-            <FaCalendar className="size-8 text-[#898989]" />
-            <p className="mt-[2px] text-xl font-medium text-[#898989] md:text-2xl">
+            <FaCalendar className="size-8 text-[#898989] dark:text-white" />
+            <p className="mt-[2px] text-xl font-medium md:text-2xl">
               29 Jan 2024
             </p>
           </div>
