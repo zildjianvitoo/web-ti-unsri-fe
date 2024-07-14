@@ -18,16 +18,16 @@ const navItems = [
     path: "/",
   },
   {
-    name: "Profile",
-    path: "/profile",
+    name: "profil",
+    path: "/profil",
     children: [
       {
         name: "Informasi Jurusan",
-        path: "/informasi-jurusan",
+        path: "/profil/informasi-jurusan",
       },
       {
-        name: "asasa",
-        path: "/asasas",
+        name: "Profil Lulusan",
+        path: "/profil/profil-lulusan",
       },
     ],
   },

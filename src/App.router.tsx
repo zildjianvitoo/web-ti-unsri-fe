@@ -6,7 +6,8 @@ import Pengumuman from "./pages/Pengumuman/Pengumuman";
 import PengumumanDetail from "./pages/Pengumuman/PengumumanDetail";
 import Berita from "./pages/Berita/Berita";
 import BeritaDetail from "./pages/Berita/BeritaDetail";
-import InformasiJurusan from "./pages/InformasiJurusan/InformasiJurusan";
+import InformasiJurusan from "./pages/Profil/InformasiJurusan";
+import ProfilLulusan from "./pages/Profil/ProfilLulusan";
 
 const RouterBuilder = () => {
   //Only for client to see
@@ -20,22 +21,25 @@ const RouterBuilder = () => {
       element: <Pengumuman />,
     },
     {
-      path: `/pengumuman/:pengumumanId`,
+      path: "/pengumuman/:pengumumanId",
       element: <PengumumanDetail />,
     },
     {
-      path: `/berita`,
+      path: "/berita",
       element: <Berita />,
     },
     {
-      path: `/berita/:beritaId`,
+      path: "/berita/:beritaId",
       element: <BeritaDetail />,
     },
     {
-      path: `/informasi-jurusan`,
+      path: "/profil/informasi-jurusan",
       element: <InformasiJurusan />,
     },
-
+    {
+      path: "/profil/profil-lulusan",
+      element: <ProfilLulusan />,
+    },
     {
       path: "*",
       element: <Navigate to="/" replace />,
