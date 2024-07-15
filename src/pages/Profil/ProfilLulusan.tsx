@@ -1,3 +1,4 @@
+import KompetensiLulusan from "@/components/App/Profil/ProfilJurusan/KompetensiLulusan";
 import KompetensiPendukung from "@/components/App/Profil/ProfilJurusan/KompetensiPendukung";
 import KompetensiUtama from "@/components/App/Profil/ProfilJurusan/KompetensiUtama";
 import SectionTitle from "@/components/SectionTitle";
@@ -12,6 +13,7 @@ export default function ProfilLulusan() {
       </section>
       <KompetensiUtama />
       <KompetensiPendukung />
+      <KompetensiLulusan />
     </>
   );
 }
