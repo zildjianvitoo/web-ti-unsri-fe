@@ -1,4 +1,5 @@
 import Berita from "@/components/App/Home/Berita";
+import Hero from "@/components/App/Home/Hero";
 import InformasiJurusan from "@/components/App/Home/InformasiJurusan";
 import Pengumuman from "@/components/App/Home/Pengumuman";
 import ProfilJurusan from "@/components/App/Home/ProfilJurusan";
@@ -17,6 +18,7 @@ export default function Home() {
         Ubah tema
       </button>
       <button onClick={() => setTheme("dark")}>Ubah tema dark</button>
+      <Hero />
       <InformasiJurusan />
       <ProfilJurusan />
       <Berita />
