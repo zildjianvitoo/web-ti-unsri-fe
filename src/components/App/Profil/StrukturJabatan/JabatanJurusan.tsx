@@ -1,5 +1,4 @@
-import img from "@/../public/images/image-dummy1.png";
-import img2 from "@/../public/images/image-dummy2.png";
+import img from "@/../public/images/tenaga-pendidik-dummy.png";
 
 const data = [
   {
@@ -10,7 +9,7 @@ const data = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Praesent auctor purus luctus enim egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex. Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in elementum tellus.",
   },
   {
-    img: img2,
+    img: img,
     nama: "Osvari Arsalan, S.Kom., M.T.",
     jabatan: "Sekretaris Jurusan",
     konten:
@@ -29,11 +28,11 @@ export default function JabatanJurusan() {
           key={index}
           className="flex w-full flex-col items-center gap-2 text-center md:flex-row md:justify-normal md:gap-5 md:text-start even:md:flex-row-reverse even:md:text-end lg:gap-10"
         >
-          <div className="w-4/6 overflow-hidden rounded-md md:w-2/6 md:self-stretch">
+          <div className="w-4/6 overflow-hidden rounded-md bg-gradient-to-br from-primary from-[23%] to-secondary md:w-2/6 md:self-stretch">
             <img
               src={data.img}
               alt={"gambar" + data.nama}
-              className="h-full w-full object-cover"
+              className="mx-auto object-cover"
             />
           </div>
           <div className="flex h-full w-full flex-col md:w-4/6 md:gap-2">
