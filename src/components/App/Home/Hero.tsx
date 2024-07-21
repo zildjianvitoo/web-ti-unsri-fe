@@ -27,7 +27,7 @@ export default function Hero() {
           {data.map((e, index) => (
             <div
               key={index}
-              className="w-full border-r-4 px-2 text-center last:border-0"
+              className="w-full border-r-4 border-white px-2 text-center last:border-0"
             >
               <h1 className="mb-2 text-4xl font-bold text-white">
                 {e.content}

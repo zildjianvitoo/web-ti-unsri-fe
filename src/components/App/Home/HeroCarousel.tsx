@@ -7,9 +7,9 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import carouselimgdummy1 from "@/../public/images/image-carousel-dummy1.png";
-import carouselimgdummy2 from "@/../public/images/image-carousel-dummy2.png";
-import carouselimgdummy3 from "@/../public/images/image-carousel-dummy3.png";
+import carouselimgdummy1 from "@/../public/images/image-dummy1.png";
+import carouselimgdummy2 from "@/../public/images/image-dummy2.png";
+import carouselimgdummy3 from "@/../public/images/image-dummy3.png";
 
 import React, { useState } from "react";
 
@@ -44,8 +44,6 @@ export default function HeroCarousel() {
       const selectedIndex = api.selectedScrollSnap();
       if (selectedIndex === 4) setIndexOnCenter(0);
       if (selectedIndex !== 4) setIndexOnCenter(selectedIndex + 1);
-
-      console.log(selectedIndex);
     });
   }, [api]);
 

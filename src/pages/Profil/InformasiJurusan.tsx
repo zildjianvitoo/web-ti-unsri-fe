@@ -1,4 +1,6 @@
 import SectionTitle from "@/components/SectionTitle";
+import Informasi from "@/components/App/Profil/InformasiJurusan/Informasi";
+import VisiMisi from "@/components/App/Profil/InformasiJurusan/VisiMisi";
 
 export default function InformasiJurusan() {
   return (
@@ -8,9 +10,8 @@ export default function InformasiJurusan() {
           <SectionTitle title="Informasi Jurusan" />
         </div>
       </section>
-      <section id="visi-misi">
-        <div className="flex flex-col gap-8 lg:gap-10"></div>
-      </section>
+      <Informasi />
+      <VisiMisi />
     </>
   );
 }

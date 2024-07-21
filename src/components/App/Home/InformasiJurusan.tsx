@@ -38,6 +38,7 @@ export default function InformasiJurusan() {
           </button>
         </div>
       </div>
+      <article className="flex"></article>
     </section>
   );
 }
