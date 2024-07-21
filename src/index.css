@@ -74,6 +74,10 @@
   }
 }
 
+.transisi {
+  @apply transition-all duration-500 ease-out;
+}
+
 .glassmorphism {
   background: rgba(255, 255, 255, 0.37);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
