@@ -8,6 +8,7 @@ import Berita from "./pages/Berita/Berita";
 import BeritaDetail from "./pages/Berita/BeritaDetail";
 import InformasiJurusan from "./pages/Profil/InformasiJurusan";
 import ProfilLulusan from "./pages/Profil/ProfilLulusan";
+import StrukturJabatan from "./pages/Profil/StrukturJabatan";
 
 const RouterBuilder = () => {
   //Only for client to see
@@ -39,6 +40,10 @@ const RouterBuilder = () => {
     {
       path: "/profil/profil-lulusan",
       element: <ProfilLulusan />,
+    },
+    {
+      path: "/profil/struktur-jabatan",
+      element: <StrukturJabatan />,
     },
     {
       path: "*",

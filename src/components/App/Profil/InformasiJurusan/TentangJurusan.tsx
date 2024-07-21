@@ -1,8 +1,11 @@
 import img from "@/../public/images/image-dummy1.png";
 
-export default function Informasi() {
+export default function TentangJurusan() {
   return (
-    <div className="mt-16 flex w-full flex-col gap-4 px-4 md:gap-8 lg:flex-row lg:px-12 xl:px-20">
+    <section
+      id="tentang-jurusan"
+      className="mt-20 flex w-full flex-col gap-4 px-4 md:gap-8 lg:flex-row lg:px-12 xl:px-20"
+    >
       <div className="overflow-hidden rounded-2xl lg:w-3/6 xl:w-2/6">
         <img
           src={img}
@@ -42,6 +45,6 @@ export default function Informasi() {
           elementum tellus.
         </p>
       </div>
-    </div>
+    </section>
   );
 }

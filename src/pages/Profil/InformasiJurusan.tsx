@@ -1,6 +1,7 @@
 import SectionTitle from "@/components/SectionTitle";
-import Informasi from "@/components/App/Profil/InformasiJurusan/Informasi";
+
 import VisiMisi from "@/components/App/Profil/InformasiJurusan/VisiMisi";
+import TentangJurusan from "@/components/App/Profil/InformasiJurusan/TentangJurusan";
 
 export default function InformasiJurusan() {
   return (
@@ -10,7 +11,7 @@ export default function InformasiJurusan() {
           <SectionTitle title="Informasi Jurusan" />
         </div>
       </section>
-      <Informasi />
+      <TentangJurusan />
       <VisiMisi />
     </>
   );
