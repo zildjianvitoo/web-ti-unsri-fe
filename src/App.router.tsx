@@ -9,6 +9,7 @@ import BeritaDetail from "./pages/Berita/BeritaDetail";
 import InformasiJurusan from "./pages/Profil/InformasiJurusan";
 import ProfilLulusan from "./pages/Profil/ProfilLulusan";
 import StrukturJabatan from "./pages/Profil/StrukturJabatan";
+// import StrukturJabatan from "./pages/Profil/StrukturJabatan";
 
 const RouterBuilder = () => {
   //Only for client to see

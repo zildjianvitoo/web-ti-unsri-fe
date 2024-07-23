@@ -29,6 +29,10 @@ const navItems = [
         name: "Profil Lulusan",
         path: "/profil/profil-lulusan",
       },
+      {
+        name: "Struktur Jabatan",
+        path: "/profil/struktur-jabatan",
+      },
     ],
   },
   {
