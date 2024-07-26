@@ -11,6 +11,7 @@ import ProfilLulusan from "./pages/Profil/ProfilLulusan";
 import StrukturJabatan from "./pages/Profil/StrukturJabatan";
 import DaftarDosen from "./pages/Profil/DaftarDosen";
 import InformasiDosen from "./pages/Dosen/InformasiDosen";
+import SaranaPrasarana from "./pages/Profil/SaranaPrasarana";
 // import StrukturJabatan from "./pages/Profil/StrukturJabatan";
 
 const RouterBuilder = () => {
@@ -51,6 +52,10 @@ const RouterBuilder = () => {
     {
       path: "/profil/daftar-dosen",
       element: <DaftarDosen />,
+    },
+    {
+      path: "/profil/sarana-prasarana",
+      element: <SaranaPrasarana />,
     },
     {
       path: "/dosen/:id",
