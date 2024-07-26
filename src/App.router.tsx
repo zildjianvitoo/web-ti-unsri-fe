@@ -9,6 +9,8 @@ import BeritaDetail from "./pages/Berita/BeritaDetail";
 import InformasiJurusan from "./pages/Profil/InformasiJurusan";
 import ProfilLulusan from "./pages/Profil/ProfilLulusan";
 import StrukturJabatan from "./pages/Profil/StrukturJabatan";
+import DaftarDosen from "./pages/Profil/DaftarDosen";
+import InformasiDosen from "./pages/Dosen/InformasiDosen";
 // import StrukturJabatan from "./pages/Profil/StrukturJabatan";
 
 const RouterBuilder = () => {
@@ -45,6 +47,14 @@ const RouterBuilder = () => {
     {
       path: "/profil/struktur-jabatan",
       element: <StrukturJabatan />,
+    },
+    {
+      path: "/profil/daftar-dosen",
+      element: <DaftarDosen />,
+    },
+    {
+      path: "/dosen/:id",
+      element: <InformasiDosen />,
     },
     {
       path: "*",

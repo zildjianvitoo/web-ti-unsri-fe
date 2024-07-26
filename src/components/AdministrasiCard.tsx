@@ -25,8 +25,6 @@ export default function AdministrasiCard({ admin }: Props) {
   );
 }
 
-// yang aku ini, compare cb tok...
-
 // <div className="transisi relative aspect-[4/5] w-1/5 overflow-hidden rounded-lg bg-gradient-to-br from-primary/70 to-secondary/70 text-white hover:shadow-2xl">
 //   <div className="absolute bottom-0 left-0 h-1/2 w-full bg-gradient-to-t from-black/70 to-black/0" />
 //   <div className="h-full w-full overflow-hidden rounded-md md:self-stretch">

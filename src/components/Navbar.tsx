@@ -33,6 +33,10 @@ const navItems = [
         name: "Struktur Jabatan",
         path: "/profil/struktur-jabatan",
       },
+      {
+        name: "Daftar Dosen",
+        path: "/profil/daftar-dosen",
+      },
     ],
   },
   {

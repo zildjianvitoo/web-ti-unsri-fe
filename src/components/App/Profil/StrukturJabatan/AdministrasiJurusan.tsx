@@ -1,15 +1,15 @@
 import img from "@/../public/images/tenaga-pendidik-dummy.png";
-import AdministrasiCard from "@/components/AdministrasiCard";
+import TenagaPendidikCard from "@/components/TenagaPendidikCard";
 
 const data = [
   {
-    img: img,
+    image: img,
     name: "Philifs Bryan",
     role: "Admin Teknik Informatika",
     field: "Kampus Palembang",
   },
   {
-    img: img,
+    image: img,
     name: "Philifs Bryan",
     role: "Admin Teknik Informatika",
     field: "Kampus Palembang",
@@ -25,9 +25,9 @@ export default function AdministrasiJurusan() {
       <h1 className="w-full text-center text-2xl font-bold lg:text-3xl">
         Administrasi
       </h1>
-      <div className="mt-5 flex flex-row justify-center gap-8">
+      <div className="mt-5 flex flex-row justify-center gap-5 lg:gap-8">
         {data.map((data, index) => (
-          <AdministrasiCard admin={data} key={index} />
+          <TenagaPendidikCard teacher={data} key={index} />
         ))}
       </div>
     </section>

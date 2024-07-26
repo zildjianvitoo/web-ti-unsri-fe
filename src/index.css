@@ -115,3 +115,26 @@
     -webkit-text-stroke: 4px white;
   }
 }
+
+.custom-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 18px;
+  text-align: left;
+  border: 0.1px solid #000;
+  overflow: hidden;
+}
+
+.custom-table td {
+  padding: 5px 35px 5px 5px;
+  border: 0.1px solid #000;
+}
+
+.custom-table tr:nth-of-type(even) {
+  @apply bg-[#f1f1e4];
+}
+
+.custom-table tr:last-of-type {
+  border-bottom: 1px solid #000;
+}
