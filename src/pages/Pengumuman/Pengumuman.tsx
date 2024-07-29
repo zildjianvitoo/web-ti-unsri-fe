@@ -1,4 +1,8 @@
+import ErrorScreen from "@/components/ErrorScreen";
+import LoadingScreen from "@/components/LoadingScreen";
 import SectionTitle from "@/components/SectionTitle";
+import { getAllPengumuman } from "@/lib/network-data/pengumuman";
+import { useQuery } from "@tanstack/react-query";
 import { FaCalendar } from "react-icons/fa";
 
 const dummyData = [
@@ -33,6 +37,15 @@ const dummyData = [
 ];
 
 export default function Pengumuman() {
+  const { data, isLoading, error } = useQuery({
+    queryFn: getAllPengumuman,
+    queryKey: ["pengumuman"],
+  });
+
+  if (isLoading) return <LoadingScreen />;
+
+  if (error) return <ErrorScreen />;
+
   return (
     <section id="pengumuman">
       <div className="flex flex-col gap-8 lg:gap-10">

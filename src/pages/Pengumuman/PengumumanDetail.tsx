@@ -1,6 +1,23 @@
+import ErrorScreen from "@/components/ErrorScreen";
+import LoadingScreen from "@/components/LoadingScreen";
+import { getPengumumanBySlug } from "@/lib/network-data/pengumuman";
+import { useQuery } from "@tanstack/react-query";
 import { FaCalendar } from "react-icons/fa";
+import { useParams } from "react-router-dom";
 
 export default function PengumumanDetail() {
+  const { slug } = useParams();
+
+  const { data, isLoading, error } = useQuery({
+    queryFn: () => getPengumumanBySlug(slug!),
+    queryKey: ["pengumuman", slug],
+    enabled: !!slug,
+  });
+
+  if (isLoading) return <LoadingScreen />;
+
+  if (error) return <ErrorScreen />;
+
   return (
     <section
       className="mx-auto mt-10 px-4 lg:mt-16 lg:px-12 xl:px-20"

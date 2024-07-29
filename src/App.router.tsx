@@ -26,7 +26,7 @@ const RouterBuilder = () => {
       element: <Pengumuman />,
     },
     {
-      path: "/pengumuman/:pengumumanId",
+      path: "/pengumuman/:slug",
       element: <PengumumanDetail />,
     },
     {
@@ -34,7 +34,7 @@ const RouterBuilder = () => {
       element: <Berita />,
     },
     {
-      path: "/berita/:beritaId",
+      path: "/berita/:slug",
       element: <BeritaDetail />,
     },
     {
@@ -58,7 +58,7 @@ const RouterBuilder = () => {
       element: <SaranaPrasarana />,
     },
     {
-      path: "/dosen/:id",
+      path: "/dosen/:slug",
       element: <InformasiDosen />,
     },
     {
