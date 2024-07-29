@@ -35,7 +35,7 @@ export default function DetailDosen() {
           </figure>
         </div>
         <div>
-          <table className="custom-table !text-base leading-6 lg:!text-lg">
+          <table className="custom-table rounded-xl !text-base leading-6 lg:!text-lg">
             <tr>
               <td>Nama</td>
               <td>{data.name}</td>
