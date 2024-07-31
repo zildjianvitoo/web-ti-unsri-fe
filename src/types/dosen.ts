@@ -32,5 +32,5 @@ export type GetDosenByIDResponse = {
     code: number;
     message: string;
   };
-  data: Dosen;
+  data: { dosen: Dosen };
 };

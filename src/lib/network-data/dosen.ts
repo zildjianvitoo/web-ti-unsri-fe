@@ -12,5 +12,5 @@ export async function getDosenByID(slug: string) {
     `/dosen/${slug}`,
   );
 
-  return data.data;
+  return data.data.dosen;
 }

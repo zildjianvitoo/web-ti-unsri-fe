@@ -1,5 +1,6 @@
 type Props = {
   teacher: {
+    id: string;
     foto: string;
     nama: string;
     jabatan: string;
@@ -11,7 +12,7 @@ export default function TenagaPendidikCard({ teacher }: Props) {
   return (
     <a
       className="transisi relative flex min-h-72 w-full flex-col justify-end overflow-hidden rounded-lg bg-gradient-to-br from-primary from-[23%] to-secondary hover:shadow-md md:min-h-96 md:basis-1/4 lg:rounded-2xl xl:basis-1/5"
-      href="/dosen"
+      href={`/dosen/${teacher.id}`}
     >
       <figure className="flex h-full w-full justify-center">
         <img
