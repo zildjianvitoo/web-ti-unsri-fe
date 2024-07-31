@@ -1,9 +1,9 @@
 type Props = {
   teacher: {
-    image: string;
-    name: string;
-    role: string;
-    field: string;
+    foto: string;
+    nama: string;
+    jabatan: string;
+    bidangPenelitian: [{ nama: string }];
   };
 };
 
@@ -15,19 +15,27 @@ export default function TenagaPendidikCard({ teacher }: Props) {
     >
       <figure className="flex h-full w-full justify-center">
         <img
-          src={teacher.image}
+          src={teacher.foto}
           alt="tenaga-pendidik"
           className="h-full w-full object-cover"
         />
       </figure>
       <div className="absolute z-10 flex flex-col p-3 text-white md:p-5">
         <h4 className="!xl:leading-6 font-semibold !leading-7 md:text-xl lg:text-2xl">
-          {teacher.name}
+          {teacher.nama}
         </h4>
-        <p className="-mt-1 text-sm md:text-sm lg:text-base">{teacher.role}</p>
-        <div className="mt-2 !line-clamp-1 w-fit rounded-full border border-white px-3 py-1 text-xs leading-3 md:text-sm">
-          {teacher.field}
-        </div>
+        <p className="-mt-1 text-sm md:text-sm lg:text-base">
+          {teacher.jabatan}
+        </p>
+
+        {teacher.bidangPenelitian.map((data, index) => (
+          <div
+            className="mt-2 !line-clamp-1 w-fit rounded-full border border-white px-3 py-1 text-xs leading-3 md:text-sm"
+            key={`bidangpenelitian-${index}`}
+          >
+            {data.nama}
+          </div>
+        ))}
       </div>
       <div className="absolute z-[8] h-full w-full bg-gradient-to-t from-[#222222]/80 to-transparent"></div>
     </a>
