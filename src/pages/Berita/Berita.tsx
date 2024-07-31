@@ -40,7 +40,10 @@ export default function Berita() {
       className="mx-auto mt-10 px-4 lg:mt-16 lg:px-12 xl:px-20"
       id="berita"
     >
-      <div className="flex flex-col gap-5 md:flex-row md:gap-7">
+      <a
+        className="flex flex-col gap-5 md:flex-row md:gap-7"
+        href={`/berita/${beritaTerbaru?.slug}`}
+      >
         <figure className="relative flex max-md:flex-col lg:basis-3/5">
           <img
             src={beritaTerbaru?.thumbnail}
@@ -55,10 +58,11 @@ export default function Berita() {
           </figcaption>
         </figure>
         <div className="flex flex-col gap-7 max-md:hidden lg:basis-2/5">
-          {beritaTerbaruLainnya.map((berita, index) => (
-            <div
+          {beritaTerbaruLainnya?.map((berita, index) => (
+            <a
               key={index}
               className="flex flex-col gap-3 md:flex-row lg:gap-4"
+              href={`/berita/${berita.slug}`}
             >
               <figure className="relative flex lg:max-w-[50%]">
                 <img
@@ -75,13 +79,17 @@ export default function Berita() {
                   {new Date(berita.tanggalDibuat).toLocaleDateString()}
                 </p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
-      </div>
+      </a>
       <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:mt-16 lg:grid-cols-3">
         {beritaSisa.map((berita, index) => (
-          <div key={index} className="flex flex-col gap-4">
+          <a
+            key={index}
+            className="flex flex-col gap-4"
+            href={`/berita/${berita.slug}`}
+          >
             <img
               src={berita.thumbnail}
               alt={berita.judul}
@@ -99,7 +107,7 @@ export default function Berita() {
               </div>
             </div>
             <p className="text-justify">{berita.konten}</p>
-          </div>
+          </a>
         ))}
       </div>
     </section>
