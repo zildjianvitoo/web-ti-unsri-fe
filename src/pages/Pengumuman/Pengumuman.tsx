@@ -50,10 +50,13 @@ export default function Pengumuman() {
     <section id="pengumuman">
       <div className="flex flex-col gap-8 lg:gap-10">
         <SectionTitle title="Pengumuman" />
-
         <div className="grid w-full grid-cols-1 gap-x-10 gap-y-8 px-4 md:grid-cols-2 md:gap-y-12 lg:mt-10 lg:grid-cols-3 lg:px-12 xl:px-20">
-          {data?.pengumuman.map((item, index) => (
-            <div key={index} className="flex flex-col gap-4">
+          {data?.map((item, index) => (
+            <a
+              key={index}
+              className="flex flex-col gap-4"
+              href={`/pengumuman/${item.slug}`}
+            >
               <figure>
                 <img src={item.thumbnail} alt="Dummy" className="rounded-md" />
               </figure>
@@ -69,7 +72,7 @@ export default function Pengumuman() {
                 </div>
                 <p>{item.konten}</p>
               </div>
-            </div>
+            </a>
           ))}
         </div>
       </div>
