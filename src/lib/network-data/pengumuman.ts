@@ -8,7 +8,7 @@ export async function getAllPengumuman() {
   const { data } =
     await axiosInstance.get<GetAllPengumumanResponse>("/pengumuman");
 
-  return data.data;
+  return data.data.pengumuman;
 }
 
 export async function getPengumumanBySlug(slug: string) {
@@ -16,5 +16,5 @@ export async function getPengumumanBySlug(slug: string) {
     `/pengumuman/${slug}`,
   );
 
-  return data.data;
+  return data.data.pengumuman;
 }
