@@ -37,6 +37,10 @@ const navItems = [
         name: "Daftar Dosen",
         path: "/profil/daftar-dosen",
       },
+      {
+        name: "Sarana & Prasarana",
+        path: "/profil/sarana-prasarana",
+      },
     ],
   },
   {
