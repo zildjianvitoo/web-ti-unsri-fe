@@ -24,7 +24,7 @@ export default function Hero() {
       <HeroCarousel />
       <div className="absolute -bottom-20 flex w-screen justify-center">
         <div className="mx-auto flex w-5/12 justify-between rounded-xl border-4 border-white bg-gradient-to-r from-primary/70 to-secondary/70 px-8 py-10 backdrop-blur-xl">
-          {data.map((e, index) => (
+          {data.slice(0, 6).map((e, index) => (
             <div
               key={index}
               className="w-full border-r-4 border-white px-2 text-center last:border-0"
