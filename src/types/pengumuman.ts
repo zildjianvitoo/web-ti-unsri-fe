@@ -13,7 +13,9 @@ export type GetAllPengumumanResponse = {
     code: number;
     message: string;
   };
-  data: Pengumuman[];
+  data: {
+    pengumuman: Pengumuman[];
+  };
 };
 
 export type GetPengumumanBySlugResponse = {
@@ -21,5 +23,7 @@ export type GetPengumumanBySlugResponse = {
     code: number;
     message: string;
   };
-  data: Pengumuman;
+  data: {
+    pengumuman: Pengumuman;
+  };
 };
