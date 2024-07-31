@@ -6,7 +6,7 @@ import { useQuery } from "@tanstack/react-query";
 export default function SaranaPrasarana() {
   const { data, isLoading, error } = useQuery({
     queryFn: getAllSaranaPrasarana,
-    queryKey: ["saranaPrasarana"],
+    queryKey: ["sarana-prasarana"],
   });
 
   if (isLoading) return <LoadingScreen />;

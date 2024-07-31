@@ -1,6 +1,19 @@
 import img from "@/../public/images/image-dummy1.png";
+import ErrorScreen from "@/components/ErrorScreen";
+import LoadingScreen from "@/components/LoadingScreen";
+import { getAllInformasiJurusan } from "@/lib/network-data/informasiJurusan";
+import { useQuery } from "@tanstack/react-query";
 
 export default function TentangJurusan() {
+  const { data, isLoading, error } = useQuery({
+    queryFn: getAllInformasiJurusan,
+    queryKey: ["informasi-jurusan"],
+  });
+
+  if (isLoading) return <LoadingScreen />;
+
+  if (error) return <ErrorScreen />;
+
   return (
     <section
       id="tentang-jurusan"
@@ -20,30 +33,7 @@ export default function TentangJurusan() {
         <h3 className="mb-2 text-center text-lg font-semibold md:text-start md:text-xl lg:mb-0">
           Universitas Sriwijaya
         </h3>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-          turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-          fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus
-          elit sed risus. Maecenas eget condimentum velit, sit amet feugiat
-          lectus. Class aptent taciti sociosqu ad litora torquent per conubia
-          nostra, per inceptos himenaeos. Praesent auctor purus luctus enim
-          egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.
-          Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum
-          lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in
-          elementum tellus.
-        </p>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu
-          turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec
-          fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus
-          elit sed risus. Maecenas eget condimentum velit, sit amet feugiat
-          lectus. Class aptent taciti sociosqu ad litora torquent per conubia
-          nostra, per inceptos himenaeos. Praesent auctor purus luctus enim
-          egestas, ac scelerisque ante pulvinar. Donec ut rhoncus ex.
-          Suspendisse ac rhoncus nisl, eu tempor urna. Curabitur vel bibendum
-          lorem. Morbi convallis convallis diam sit amet lacinia. Aliquam in
-          elementum tellus.
-        </p>
+        <p>{data?.informasi}</p>
       </div>
     </section>
   );
