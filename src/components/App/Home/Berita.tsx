@@ -25,15 +25,17 @@ export default function Berita() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 lg:gap-10">
           {data?.slice(0, 3).map((item, index) => (
             <a
-              className="flex flex-col gap-4"
+              className="group flex flex-col gap-4"
               key={`berita-${index}`}
               href={`/berita/${item.slug}`}
             >
-              <img
-                src={item.thumbnail}
-                alt="Berita"
-                className="max-h-72 w-full rounded-md object-cover"
-              />
+              <div className="max-h-72 w-full overflow-hidden rounded-md">
+                <img
+                  src={item.thumbnail}
+                  alt="Berita"
+                  className="object-cover transition-all duration-300 ease-in-out group-hover:scale-[1.03]"
+                />
+              </div>
               <div className="flex flex-col gap-2">
                 <h3 className="text-xl font-semibold md:text-2xl">
                   {item.judul}
