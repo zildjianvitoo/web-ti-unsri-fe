@@ -7,14 +7,14 @@ type Props = {
 export default function TenagaPendidikCard({ teacher }: Props) {
   return (
     <a
-      className="transisi relative flex min-h-72 w-full flex-col justify-end overflow-hidden rounded-lg bg-gradient-to-br from-primary from-[23%] to-secondary hover:shadow-md md:min-h-96 md:basis-1/4 lg:rounded-2xl xl:basis-1/5"
+      className="transisi group relative flex min-h-72 w-full flex-col justify-end overflow-hidden rounded-lg bg-gradient-to-br from-primary from-[23%] to-secondary hover:shadow-md md:min-h-96 md:basis-1/4 lg:rounded-2xl xl:basis-1/5"
       href={`/dosen/${teacher.id}`}
     >
       <figure className="flex h-full w-full justify-center">
         <img
           src={teacher.foto}
           alt="tenaga-pendidik"
-          className="h-full w-full object-cover"
+          className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-[1.03]"
         />
       </figure>
       <div className="absolute z-10 flex flex-col p-3 text-white md:p-5">

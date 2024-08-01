@@ -1,21 +1,5 @@
-import img from "@/../public/images/tenaga-pendidik-dummy.png";
 import TenagaPendidikCard from "@/components/TenagaPendidikCard";
 import { Admin } from "@/types/strukturJabatan";
-
-const data = [
-  {
-    image: img,
-    name: "Philifs Bryan",
-    role: "Admin Teknik Informatika",
-    field: "Kampus Palembang",
-  },
-  {
-    image: img,
-    name: "Philifs Bryan",
-    role: "Admin Teknik Informatika",
-    field: "Kampus Palembang",
-  },
-];
 
 export default function AdministrasiJurusan({ data }: { data: Admin[] }) {
   return (
