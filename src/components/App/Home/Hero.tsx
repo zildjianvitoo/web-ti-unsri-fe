@@ -22,14 +22,14 @@ export default function Hero() {
   return (
     <section id="hero" className="relative mb-36">
       <HeroCarousel />
-      <div className="absolute -bottom-20 flex w-screen justify-center">
-        <div className="mx-auto flex w-5/12 justify-between rounded-xl border-4 border-white bg-gradient-to-r from-primary/70 to-secondary/70 px-8 py-10 backdrop-blur-xl">
+      <div className="absolute -bottom-20 flex w-screen justify-center px-12 md:px-8">
+        <div className="mx-auto flex justify-between rounded-xl border-4 border-white bg-gradient-to-r from-primary/70 to-secondary/70 px-4 py-10 backdrop-blur-xl lg:w-5/12 lg:px-8">
           {data.slice(0, 6).map((e, index) => (
             <div
               key={index}
               className="w-full border-r-4 border-white px-2 text-center last:border-0"
             >
-              <h1 className="mb-2 text-4xl font-bold text-white">
+              <h1 className="mb-2 text-2xl font-semibold text-white md:text-3xl lg:text-4xl lg:font-bold">
                 {e.content}
               </h1>
               {/* <p className="text font-outline-2 text-3xl font-bold text-transparent">

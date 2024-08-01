@@ -12,6 +12,7 @@ import carouselimgdummy2 from "@/../public/images/image-dummy2.png";
 import carouselimgdummy3 from "@/../public/images/image-dummy3.png";
 
 import React, { useState } from "react";
+import { cn } from "@/lib/utils";
 
 const data = [
   {
@@ -48,7 +49,7 @@ export default function HeroCarousel() {
   }, [api]);
 
   return (
-    <div className="mx-auto flex h-[33rem] w-[150vw] items-center justify-center">
+    <div className="mx-auto flex w-[150vw] items-center justify-center max-sm:max-h-[20rem] lg:h-[33rem]">
       <Carousel
         plugins={[
           Autoplay({
@@ -62,7 +63,7 @@ export default function HeroCarousel() {
         }}
         setApi={setApi}
       >
-        <CarouselContent className="items-center gap-3 pl-3">
+        <CarouselContent className="flex items-center gap-3 pl-3">
           {data.map((e, index) => (
             <CarouselItem
               key={index}
@@ -71,7 +72,13 @@ export default function HeroCarousel() {
               <img
                 src={e.img}
                 alt={e.img}
-                className={`w-full object-cover transition-all duration-500 ease-in-out ${index === indexOnCenter ? "h-[34rem]" : "h-[30rem]"}`}
+                className={cn(
+                  "h-[20rem] w-full object-cover duration-100 ease-in-out md:h-[25rem] lg:h-[30rem] lg:transition-all lg:duration-500",
+                  {
+                    "h-[23rem] md:h-[27rem] lg:h-[34rem]":
+                      index === indexOnCenter,
+                  },
+                )}
               />
             </CarouselItem>
           ))}
