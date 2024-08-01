@@ -1,14 +1,38 @@
 import ErrorScreen from "@/components/ErrorScreen";
 import LoadingScreen from "@/components/LoadingScreen";
+import PaginationButton from "@/components/PaginationButton";
+import { useFilters } from "@/hooks/useFilters";
 import { getAllBerita } from "@/lib/network-data/berita";
 import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 import { FaCalendar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Berita() {
+  const [total, setTotal] = useState(0);
+  const [pageIndex, setPageIndex] = useState(1);
+
+  const { filters, setFilters } = useFilters();
+
   const { data, isLoading, error } = useQuery({
-    queryFn: getAllBerita,
-    queryKey: ["berita"],
+    queryFn: async () => {
+      const { berita, paginasi } = await getAllBerita(filters);
+      setTotal(paginasi.totalItem);
+      return berita;
+    },
+    queryKey: ["berita", filters],
   });
+
+  const paginationNumber = Math.ceil(total / 10);
+
+  const handlePagination = (index: number) => {
+    if (index >= 0 && index < paginationNumber) {
+      setPageIndex(pageIndex);
+      setFilters({
+        pageIndex: index.toString(),
+      });
+    }
+  };
 
   if (isLoading) return <LoadingScreen />;
 
@@ -19,9 +43,9 @@ export default function Berita() {
       className="mx-auto mt-10 px-4 lg:mt-16 lg:px-12 xl:px-20"
       id="berita"
     >
-      <a
+      <Link
         className="flex flex-col gap-5 md:flex-row md:gap-7"
-        href={`/berita/${data?.at(0)?.slug}`}
+        to={`/berita/${data?.at(0)?.slug}`}
       >
         <figure className="relative flex max-md:flex-col lg:basis-3/5">
           <img
@@ -61,7 +85,7 @@ export default function Berita() {
             </a>
           ))}
         </div>
-      </a>
+      </Link>
       <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:mt-16 lg:grid-cols-3">
         {data?.slice(5).map((berita, index) => (
           <a
@@ -89,6 +113,11 @@ export default function Berita() {
           </a>
         ))}
       </div>
+      <PaginationButton
+        paginationNumber={paginationNumber}
+        pageIndex={pageIndex}
+        handlePagination={handlePagination}
+      />
     </section>
   );
 }

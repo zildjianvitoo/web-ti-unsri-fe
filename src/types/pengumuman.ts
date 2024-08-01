@@ -1,3 +1,5 @@
+import { Pagination } from "./pagination";
+
 type Pengumuman = {
   id: string;
   judul: string;
@@ -15,6 +17,7 @@ export type GetAllPengumumanResponse = {
   };
   data: {
     pengumuman: Pengumuman[];
+    paginasi: Pagination;
   };
 };
 

@@ -1,10 +1,16 @@
 import { GetAllBeritaResponse, GetBeritaBySlugResponse } from "@/types/berita";
 import { axiosInstance } from "../axiosInstance";
 
-export async function getAllBerita() {
-  const { data } = await axiosInstance.get<GetAllBeritaResponse>("/berita");
+export async function getAllBerita({
+  pageIndex = 1,
+}: {
+  pageIndex?: number | string;
+}) {
+  const { data } = await axiosInstance.get<GetAllBeritaResponse>(
+    `/berita?halaman=${pageIndex}`,
+  );
 
-  return data.data.berita;
+  return data.data;
 }
 
 export async function getBeritaBySlug(slug: string) {

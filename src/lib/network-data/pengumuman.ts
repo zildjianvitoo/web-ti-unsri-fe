@@ -4,11 +4,16 @@ import {
 } from "@/types/pengumuman";
 import { axiosInstance } from "../axiosInstance";
 
-export async function getAllPengumuman() {
-  const { data } =
-    await axiosInstance.get<GetAllPengumumanResponse>("/pengumuman");
+export async function getAllPengumuman({
+  pageIndex = 1,
+}: {
+  pageIndex?: number;
+}) {
+  const { data } = await axiosInstance.get<GetAllPengumumanResponse>(
+    `/pengumuman?halaman=${pageIndex}`,
+  );
 
-  return data.data.pengumuman;
+  return data.data;
 }
 
 export async function getPengumumanBySlug(slug: string) {

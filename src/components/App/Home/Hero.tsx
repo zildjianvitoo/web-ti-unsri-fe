@@ -1,7 +1,4 @@
 import HeroCarousel from "./HeroCarousel";
-import alumniText from "@/../public/images/alumni-statistik-text.svg";
-import pengajarText from "@/../public/images/pengajar-statistik-text.svg";
-import mahasiswaText from "@/../public/images/mahasiswa-statistik-text.svg";
 
 const data = [
   {
@@ -36,13 +33,25 @@ export default function Hero() {
                 {e.type}
               </p> */}
               {e.type === "Alumni" && (
-                <img src={alumniText} alt="" className="mx-auto" />
+                <img
+                  src={"/images/alumni-statistik-text.svg"}
+                  alt="Alumni"
+                  className="mx-auto"
+                />
               )}
               {e.type === "Mahasiswa" && (
-                <img src={mahasiswaText} alt="" className="mx-auto" />
+                <img
+                  src={"/images/mahasiswa-statistik-text.svg"}
+                  alt="Mahasiswa"
+                  className="mx-auto"
+                />
               )}
               {e.type === "Pengajar" && (
-                <img src={pengajarText} alt="" className="mx-auto" />
+                <img
+                  src={"/images/pengajar-statistik-text.svg"}
+                  alt="Pengajar"
+                  className="mx-auto"
+                />
               )}
             </div>
           ))}

@@ -22,7 +22,7 @@ export default function TenagaPendidik() {
       <div className="flex flex-col gap-7 lg:gap-10">
         <h1 className="text-3xl font-bold md:text-4xl">Tenaga Pendidik</h1>
 
-        <div className="relative grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-5">
+        <div className="relative grid grid-cols-2 gap-5 md:grid-cols-3 lg:grid-cols-4">
           {data
             ?.slice(0, 5)
             .map((item, index) => (

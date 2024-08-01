@@ -21,7 +21,7 @@ export default function BeritaDetail() {
 
   return (
     <section
-      className="mx-auto mt-10 px-4 lg:mt-16 lg:px-12 xl:px-20"
+      className="mx-auto px-4 lg:mt-16 lg:px-12 xl:px-20"
       id="berita-detail"
     >
       <div className="flex flex-col gap-6 lg:gap-10">

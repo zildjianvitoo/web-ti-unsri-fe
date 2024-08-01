@@ -7,7 +7,7 @@ import { Toaster } from "@/components/ui/sonner";
 const AppLayout = memo(() => {
   return (
     <Suspense fallback={null}>
-      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme">
+      <ThemeProvider defaultTheme="dark" storageKey="vite-ui-theme ">
         <ScrollRestoration />
         <Toaster />
         <div className="font-inter mx-auto flex flex-col">
