@@ -24,14 +24,14 @@ export default function Pengumuman() {
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-y-10">
           {data?.map((item, index) => (
             <a
-              className="flex flex-col items-center gap-4 lg:flex-row"
+              className="group flex flex-col items-center gap-4 lg:flex-row"
               key={`berita-${index}`}
             >
-              <figure className="h-full bg-gray-800 md:basis-[25%]">
+              <figure className="h-full overflow-hidden rounded-md bg-gray-800 md:basis-[25%]">
                 <img
                   src={item.thumbnail}
                   alt="Vector Informasi Jurusan "
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover transition-all duration-300 ease-in-out group-hover:scale-[1.03]"
                 />
               </figure>
               <div className="flex flex-col gap-4 md:basis-[75%]">

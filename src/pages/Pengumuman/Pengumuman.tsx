@@ -1,6 +1,7 @@
 import ErrorScreen from "@/components/ErrorScreen";
 import LoadingScreen from "@/components/LoadingScreen";
 import SectionTitle from "@/components/SectionTitle";
+import formatDateTimeID from "@/lib/formatDateTimeID";
 import { getAllPengumuman } from "@/lib/network-data/pengumuman";
 import { useQuery } from "@tanstack/react-query";
 import { FaCalendar } from "react-icons/fa";
@@ -41,7 +42,7 @@ export default function Pengumuman() {
                   <div className="flex items-center gap-2">
                     <FaCalendar className="size-4 text-[#5c5839] dark:text-white" />
                     <p className="mt-[2px] text-sm font-medium text-[#696969] dark:text-white">
-                      {item.tanggalDibuat}
+                      {formatDateTimeID(item.tanggalDibuat)}
                     </p>
                   </div>
                   <p>{item.konten}</p>
