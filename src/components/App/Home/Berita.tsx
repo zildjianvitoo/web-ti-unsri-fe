@@ -7,7 +7,10 @@ import { FaCalendar } from "react-icons/fa";
 
 export default function Berita() {
   const { data, isLoading, error } = useQuery({
-    queryFn: getAllBerita,
+    queryFn: async () => {
+      const { berita } = await getAllBerita({});
+      return berita;
+    },
     queryKey: ["berita"],
   });
 

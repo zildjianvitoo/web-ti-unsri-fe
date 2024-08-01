@@ -6,7 +6,10 @@ import { useQuery } from "@tanstack/react-query";
 
 export default function Pengumuman() {
   const { data, isLoading, error } = useQuery({
-    queryFn: getAllPengumuman,
+    queryFn: async () => {
+      const { pengumuman } = await getAllPengumuman({});
+      return pengumuman;
+    },
     queryKey: ["pengumuman"],
   });
 
