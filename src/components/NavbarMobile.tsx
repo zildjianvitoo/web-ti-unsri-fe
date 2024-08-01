@@ -50,7 +50,7 @@ export default function NavbarMobile({ navItems }: Props) {
                     value={item.name}
                     className="m-0 border-none p-0"
                   >
-                    <AccordionTrigger className="text-text-500 m-0 flex w-full justify-between p-0 text-start uppercase">
+                    <AccordionTrigger className="text-text-500 m-0 flex w-full justify-between p-0 text-start font-normal uppercase">
                       {item.name}
                     </AccordionTrigger>
                     <AccordionContent className="ml-2 mt-5 flex flex-col gap-3">
