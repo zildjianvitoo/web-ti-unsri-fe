@@ -2,34 +2,13 @@ import ErrorScreen from "@/components/ErrorScreen";
 import LoadingScreen from "@/components/LoadingScreen";
 import { getAllBerita } from "@/lib/network-data/berita";
 import { useQuery } from "@tanstack/react-query";
-import { useEffect, useState } from "react";
 import { FaCalendar } from "react-icons/fa";
-import { Berita as BeritaType } from "@/types/berita";
 
 export default function Berita() {
-  const [beritaTerbaru, setBeritaTerbaru] = useState<BeritaType | null>(null);
-  const [beritaTerbaruLainnya, setBeritaTerbaruLainnya] = useState<
-    BeritaType[]
-  >([]);
-  const [beritaSisa, setBeritaSisa] = useState<BeritaType[]>([]);
-
   const { data, isLoading, error } = useQuery({
     queryFn: getAllBerita,
     queryKey: ["berita"],
   });
-
-  useEffect(() => {
-    if (data) {
-      const sorted = data.sort(
-        (a, b) =>
-          new Date(b.tanggalDibuat).getTime() -
-          new Date(a.tanggalDibuat).getTime(),
-      );
-      setBeritaTerbaru(sorted[0]);
-      setBeritaTerbaruLainnya(sorted.slice(1, 4));
-      setBeritaSisa(sorted.slice(4));
-    }
-  }, [data]);
 
   if (isLoading) return <LoadingScreen />;
 
@@ -42,23 +21,23 @@ export default function Berita() {
     >
       <a
         className="flex flex-col gap-5 md:flex-row md:gap-7"
-        href={`/berita/${beritaTerbaru?.slug}`}
+        href={`/berita/${data?.at(0)?.slug}`}
       >
         <figure className="relative flex max-md:flex-col lg:basis-3/5">
           <img
-            src={beritaTerbaru?.thumbnail}
-            alt={beritaTerbaru?.judul}
+            src={data?.at(0)?.thumbnail}
+            alt={data?.at(0)?.judul}
             className="rounded-md object-cover"
           />
           <figcaption className="glassmorphism absolute bottom-0 left-0 hidden w-full flex-col gap-2 rounded-none p-4 md:flex md:h-1/2 lg:h-[40%] lg:p-8 xl:h-[35%]">
             <h3 className="text-xl font-semibold md:text-2xl">
-              {beritaTerbaru?.judul}
+              {data?.at(0)?.judul}
             </h3>
-            <p className="text-lg">{beritaTerbaru?.konten}</p>
+            <p className="line-clamp-4 text-lg">{data?.at(0)?.konten}</p>
           </figcaption>
         </figure>
         <div className="flex flex-col gap-7 max-md:hidden lg:basis-2/5">
-          {beritaTerbaruLainnya?.map((berita, index) => (
+          {data?.slice(1, 4).map((berita, index) => (
             <a
               key={index}
               className="flex flex-col gap-3 md:flex-row lg:gap-4"
@@ -84,7 +63,7 @@ export default function Berita() {
         </div>
       </a>
       <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:mt-16 lg:grid-cols-3">
-        {beritaSisa.map((berita, index) => (
+        {data?.slice(5).map((berita, index) => (
           <a
             key={index}
             className="flex flex-col gap-4"
