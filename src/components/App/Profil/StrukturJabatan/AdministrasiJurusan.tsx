@@ -1,5 +1,6 @@
 import img from "@/../public/images/tenaga-pendidik-dummy.png";
 import TenagaPendidikCard from "@/components/TenagaPendidikCard";
+import { Admin } from "@/types/strukturJabatan";
 
 const data = [
   {
@@ -16,7 +17,7 @@ const data = [
   },
 ];
 
-export default function AdministrasiJurusan() {
+export default function AdministrasiJurusan({ data }: { data: Admin[] }) {
   return (
     <section
       id="administrasi-jurusan"
