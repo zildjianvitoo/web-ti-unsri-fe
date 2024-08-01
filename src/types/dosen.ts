@@ -1,4 +1,4 @@
-type Dosen = {
+export type Dosen = {
   id: string;
   nama: string;
   nip: string;

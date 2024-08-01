@@ -1,14 +1,37 @@
 import ErrorScreen from "@/components/ErrorScreen";
 import LoadingScreen from "@/components/LoadingScreen";
+import PaginationButton from "@/components/PaginationButton";
+import { useFilters } from "@/hooks/useFilters";
 import { getAllBerita } from "@/lib/network-data/berita";
 import { useQuery } from "@tanstack/react-query";
+import { useState } from "react";
 import { FaCalendar } from "react-icons/fa";
 
 export default function Berita() {
+  const [total, setTotal] = useState(0);
+  const [pageIndex, setPageIndex] = useState(1);
+
+  const { filters, setFilters } = useFilters();
+
   const { data, isLoading, error } = useQuery({
-    queryFn: getAllBerita,
-    queryKey: ["berita"],
+    queryFn: async () => {
+      const { berita, paginasi } = await getAllBerita(filters);
+      setTotal(paginasi.totalItem);
+      return berita;
+    },
+    queryKey: ["berita", filters],
   });
+
+  const paginationNumber = Math.ceil(total / 10);
+
+  const handlePagination = (index: number) => {
+    if (index >= 0 && index < paginationNumber) {
+      setPageIndex(pageIndex);
+      setFilters({
+        pageIndex: index.toString(),
+      });
+    }
+  };
 
   if (isLoading) return <LoadingScreen />;
 
@@ -89,6 +112,11 @@ export default function Berita() {
           </a>
         ))}
       </div>
+      <PaginationButton
+        paginationNumber={paginationNumber}
+        pageIndex={pageIndex}
+        handlePagination={handlePagination}
+      />
     </section>
   );
 }

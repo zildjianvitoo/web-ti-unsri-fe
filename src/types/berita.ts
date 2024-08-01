@@ -1,3 +1,5 @@
+import { Pagination } from "./pagination";
+
 export type Berita = {
   id: string;
   judul: string;
@@ -13,7 +15,7 @@ export type GetAllBeritaResponse = {
     code: number;
     message: string;
   };
-  data: { berita: Berita[] };
+  data: { berita: Berita[]; paginasi: Pagination };
 };
 
 export type GetBeritaBySlugResponse = {

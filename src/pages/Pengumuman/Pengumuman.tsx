@@ -5,6 +5,10 @@ import { getAllPengumuman } from "@/lib/network-data/pengumuman";
 import { useQuery } from "@tanstack/react-query";
 import { FaCalendar } from "react-icons/fa";
 
+import PaginationButton from "@/components/PaginationButton";
+import { useFilters } from "@/hooks/useFilters";
+import { useState } from "react";
+
 // const dummyData = [
 //   {
 //     image: "/images/carousel-image.png",
@@ -37,10 +41,30 @@ import { FaCalendar } from "react-icons/fa";
 // ];
 
 export default function Pengumuman() {
+  const [total, setTotal] = useState(0);
+  const [pageIndex, setPageIndex] = useState(1);
+
+  const { filters, setFilters } = useFilters();
+
   const { data, isLoading, error } = useQuery({
-    queryFn: getAllPengumuman,
-    queryKey: ["pengumuman"],
+    queryFn: async () => {
+      const { pengumuman, paginasi } = await getAllPengumuman(filters);
+      setTotal(paginasi.totalItem);
+      return pengumuman;
+    },
+    queryKey: ["pengumuman", filters],
   });
+
+  const paginationNumber = Math.ceil(total / 10);
+
+  const handlePagination = (index: number) => {
+    if (index >= 0 && index < paginationNumber) {
+      setPageIndex(pageIndex);
+      setFilters({
+        pageIndex: index.toString(),
+      });
+    }
+  };
 
   if (isLoading) return <LoadingScreen />;
 
@@ -75,6 +99,11 @@ export default function Pengumuman() {
             </a>
           ))}
         </div>
+        <PaginationButton
+          paginationNumber={paginationNumber}
+          pageIndex={pageIndex}
+          handlePagination={handlePagination}
+        />
       </div>
     </section>
   );
