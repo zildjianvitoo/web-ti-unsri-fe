@@ -36,8 +36,8 @@ export default function PaginationButton({
         {Array.from({ length: paginationNumber }, (_, index) => (
           <PaginationItem key={index}>
             <PaginationLink
-              onClick={() => handlePagination(index)}
-              isActive={index === pageIndex}
+              onClick={() => handlePagination(index + 1)}
+              isActive={index + 1 === pageIndex}
             >
               {index + 1}
             </PaginationLink>

@@ -66,8 +66,6 @@ export default function Pengumuman() {
     }
   };
 
-  if (isLoading) return <LoadingScreen />;
-
   if (error) return <ErrorScreen />;
 
   return (
