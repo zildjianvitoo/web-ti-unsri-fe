@@ -18,7 +18,7 @@ const navItems = [
     path: "/",
   },
   {
-    name: "profil",
+    name: "Profil",
     path: "/profil",
     children: [
       {

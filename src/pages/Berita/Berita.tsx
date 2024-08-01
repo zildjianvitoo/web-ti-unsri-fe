@@ -6,6 +6,7 @@ import { getAllBerita } from "@/lib/network-data/berita";
 import { useQuery } from "@tanstack/react-query";
 import { useState } from "react";
 import { FaCalendar } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 export default function Berita() {
   const [total, setTotal] = useState(0);
@@ -42,9 +43,9 @@ export default function Berita() {
       className="mx-auto mt-10 px-4 lg:mt-16 lg:px-12 xl:px-20"
       id="berita"
     >
-      <a
+      <Link
         className="flex flex-col gap-5 md:flex-row md:gap-7"
-        href={`/berita/${data?.at(0)?.slug}`}
+        to={`/berita/${data?.at(0)?.slug}`}
       >
         <figure className="relative flex max-md:flex-col lg:basis-3/5">
           <img
@@ -84,7 +85,7 @@ export default function Berita() {
             </a>
           ))}
         </div>
-      </a>
+      </Link>
       <div className="mt-10 grid grid-cols-1 gap-10 md:grid-cols-2 lg:mt-16 lg:grid-cols-3">
         {data?.slice(5).map((berita, index) => (
           <a
