@@ -12,6 +12,8 @@ import StrukturJabatan from "./pages/Profil/StrukturJabatan";
 import DaftarDosen from "./pages/Profil/DaftarDosen";
 import InformasiDosen from "./pages/Dosen/InformasiDosen";
 import SaranaPrasarana from "./pages/Profil/SaranaPrasarana";
+import Kurikulum from "./pages/Akademik/Kurikulum";
+import PanduanSOP from "./pages/Akademik/PanduanSOP";
 // import StrukturJabatan from "./pages/Profil/StrukturJabatan";
 
 const RouterBuilder = () => {
@@ -60,6 +62,14 @@ const RouterBuilder = () => {
     {
       path: "/dosen/:slug",
       element: <InformasiDosen />,
+    },
+    {
+      path: "/akademik/kurikulum",
+      element: <Kurikulum />,
+    },
+    {
+      path: "/akademik/panduan-sop",
+      element: <PanduanSOP />,
     },
     {
       path: "*",

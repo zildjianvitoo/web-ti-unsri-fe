@@ -46,18 +46,14 @@ const navItems = [
   {
     name: "Akademik",
     path: "/akademik",
-  },
-  {
-    name: "Panduan & SOP",
-    path: "/panduan-dan-sop",
     children: [
       {
-        name: "asasa",
-        path: "/asasas",
+        name: "Kurikulum",
+        path: "/akademik/kurikulum",
       },
       {
-        name: "asasa",
-        path: "/asasas",
+        name: "Panduan & SOP",
+        path: "/akademik/panduan-sop",
       },
     ],
   },
