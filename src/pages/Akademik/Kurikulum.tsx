@@ -1,4 +1,5 @@
 import SectionTitle from "@/components/SectionTitle";
+import { CgArrowTopRight, CgSoftwareDownload } from "react-icons/cg";
 
 export default function Kurikulum() {
   return (
@@ -22,11 +23,13 @@ export default function Kurikulum() {
                 torquent per conubia nostra, per inceptos himenaeos.
               </p>
               <div className="flex flex-row gap-2">
-                <button className="rounded-full bg-green-500 px-5 py-1 font-medium text-white max-md:text-sm">
+                <button className="flex items-center justify-between gap-2 rounded-full bg-green-400 px-4 py-1 font-medium text-white max-md:text-sm">
                   Tinjau
+                  <CgArrowTopRight className="text-xl" />
                 </button>
-                <button className="rounded-full bg-red-500 px-5 py-1 font-medium text-white max-md:text-sm">
+                <button className="flex justify-between gap-2 rounded-full bg-red-400 px-4 py-1 font-medium text-white max-md:text-sm">
                   Unduh
+                  <CgSoftwareDownload className="text-xl" />
                 </button>
               </div>
             </div>
