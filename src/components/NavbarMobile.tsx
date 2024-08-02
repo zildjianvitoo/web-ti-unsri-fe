@@ -35,7 +35,7 @@ export default function NavbarMobile({ navItems }: Props) {
   return (
     <Sheet>
       <div className="flex flex-row items-center gap-1">
-        <button className="rounded-full bg-[#DD26FA] bg-opacity-10 p-1">
+        <button className="rounded-full bg-[#DD26FA] bg-opacity-10 p-1 lg:hidden">
           {theme === "light" ? (
             <SunMoon
               onClick={() => {
