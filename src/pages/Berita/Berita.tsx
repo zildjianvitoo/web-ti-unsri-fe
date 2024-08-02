@@ -51,13 +51,15 @@ export default function Berita() {
           <img
             src={data?.at(0)?.thumbnail}
             alt={data?.at(0)?.judul}
-            className="rounded-md object-cover"
+            className="h-80 rounded-md object-cover"
           />
-          <figcaption className="glassmorphism absolute bottom-0 left-0 hidden w-full flex-col gap-2 rounded-none p-4 md:flex md:h-1/2 lg:h-[40%] lg:p-8 xl:h-[35%]">
-            <h3 className="text-xl font-semibold md:text-2xl">
+          <figcaption className="glassmorphism absolute bottom-0 left-0 flex w-full flex-col gap-2 rounded-none p-4 md:h-1/2 lg:h-[40%] lg:p-8 xl:h-[35%]">
+            <h3 className="text-lg font-semibold max-sm:!leading-6 md:text-2xl">
               {data?.at(0)?.judul}
             </h3>
-            <p className="line-clamp-4 text-lg">{data?.at(0)?.konten}</p>
+            <p className="line-clamp-2 text-base md:text-lg">
+              {data?.at(0)?.konten}
+            </p>
           </figcaption>
         </figure>
         <div className="flex flex-col gap-7 max-md:hidden lg:basis-2/5">
