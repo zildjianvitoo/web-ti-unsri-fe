@@ -59,7 +59,7 @@ export default function PanduanSOP() {
                 {item.data.map((item, index) => (
                   <a
                     className={cn(
-                      `flex items-center justify-between rounded-md border-2 border-primary px-2 py-2 font-semibold transition-all duration-300 ease-in-out hover:bg-primary max-md:text-sm`,
+                      `flex flex-nowrap items-center justify-between rounded-md border-2 border-primary px-2 py-2 font-semibold transition-all duration-300 ease-in-out hover:bg-primary max-md:text-sm`,
                       {
                         "even:border-secondary hover:bg-secondary md:border-secondary":
                           index % 4 < 2,
