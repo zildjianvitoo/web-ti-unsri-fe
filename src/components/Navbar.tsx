@@ -9,7 +9,7 @@ import {
   MenubarMenu,
   MenubarTrigger,
 } from "./ui/menubar";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Sun, SunMoon } from "lucide-react";
 import { useTheme } from "@/hooks/useTheme";
 
 const navItems = [
@@ -74,7 +74,7 @@ const navItems = [
 export default function Navbar() {
   const [isFixedPosition, setIsPositionFixed] = useState(false);
   const { pathname } = useLocation();
-  const { theme } = useTheme();
+  const { theme, setTheme } = useTheme();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -121,7 +121,7 @@ export default function Navbar() {
 
         <div
           className={cn(
-            "hidden gap-6 py-5 text-sm font-medium uppercase transition lg:flex",
+            "hidden items-center gap-6 py-5 text-sm font-medium uppercase transition lg:flex",
           )}
         >
           {navItems.map((item) =>
@@ -174,6 +174,21 @@ export default function Navbar() {
               </NavLink>
             ),
           )}
+          <button className="rounded-full bg-[#DD26FA] bg-opacity-10 p-1">
+            {theme === "light" ? (
+              <SunMoon
+                onClick={() => {
+                  setTheme("dark");
+                }}
+              />
+            ) : (
+              <Sun
+                onClick={() => {
+                  setTheme("light");
+                }}
+              />
+            )}
+          </button>
         </div>
       </div>
     </nav>

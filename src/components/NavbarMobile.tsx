@@ -5,7 +5,7 @@ import {
   SheetContent,
   SheetTrigger,
 } from "@/components/ui/sheet";
-import { Menu } from "lucide-react";
+import { Menu, Sun, SunMoon } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
 import { cn } from "@/lib/utils";
@@ -16,6 +16,7 @@ import {
   AccordionTrigger,
 } from "./ui/accordion";
 import { Separator } from "./ui/separator";
+import { useTheme } from "@/hooks/useTheme";
 
 type Props = {
   navItems: {
@@ -29,17 +30,36 @@ type Props = {
 };
 
 export default function NavbarMobile({ navItems }: Props) {
+  const { theme, setTheme } = useTheme();
+
   return (
     <Sheet>
-      <SheetTrigger asChild>
-        <Button
-          size={"icon"}
-          variant={"ghost"}
-          className="flex duration-300 hover:bg-black/20 hover:text-white lg:hidden"
-        >
-          <Menu />
-        </Button>
-      </SheetTrigger>
+      <div className="flex flex-row items-center gap-1">
+        <button className="rounded-full bg-[#DD26FA] bg-opacity-10 p-1">
+          {theme === "light" ? (
+            <SunMoon
+              onClick={() => {
+                setTheme("dark");
+              }}
+            />
+          ) : (
+            <Sun
+              onClick={() => {
+                setTheme("light");
+              }}
+            />
+          )}
+        </button>
+        <SheetTrigger asChild>
+          <Button
+            size={"icon"}
+            variant={"ghost"}
+            className="flex duration-300 hover:bg-black/20 hover:text-white lg:hidden"
+          >
+            <Menu />
+          </Button>
+        </SheetTrigger>
+      </div>
       <SheetContent side={"left"} className="font-inter">
         <div className="mt-10 text-sm uppercase">
           <Accordion type="single" className="flex flex-col gap-6" collapsible>
