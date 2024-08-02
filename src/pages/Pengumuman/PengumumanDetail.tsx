@@ -21,17 +21,17 @@ export default function PengumumanDetail() {
 
   return (
     <section
-      className="mx-auto mt-10 px-4 lg:mt-16 lg:px-12 xl:px-20"
+      className="mx-auto mt-10 flex justify-center px-4 lg:mt-16 lg:px-12 xl:px-20"
       id="pengumuman-detail"
     >
-      <div className="flex flex-col gap-6 lg:gap-10">
+      <div className="flex flex-col gap-6 lg:w-4/5 lg:gap-5">
         <div className="flex flex-col gap-3 md:gap-4">
-          <h1 className="text-3xl font-bold md:text-4xl lg:text-5xl">
+          <h1 className="text-xl font-semibold !leading-6 md:text-xl lg:text-3xl">
             {data?.judul}
           </h1>
-          <div className="mt-2 flex gap-2">
-            <FaCalendar className="size-8 text-[#898989] dark:text-white" />
-            <p className="mt-[2px] text-xl font-medium md:text-2xl">
+          <div className="flex flex-row items-center gap-2">
+            <FaCalendar className="size-5 text-[#5c5839] dark:text-white" />
+            <p className="mt-[2px] text-sm font-medium md:text-base">
               {formatDateTimeID(data?.tanggalDibuat)}
             </p>
           </div>
