@@ -39,7 +39,7 @@ export default function PengumumanDetail() {
         <div className="flex flex-col gap-8 md:gap-10 lg:gap-14">
           <figure className="w-full">
             <img
-              src="/images/carousel-image.png"
+              src={data?.thumbnail}
               alt="Dummy"
               className="w-full object-contain"
             />
