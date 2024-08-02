@@ -49,7 +49,7 @@ export default function HeroCarousel() {
   }, [api]);
 
   return (
-    <div className="mx-auto flex w-[150vw] items-center justify-center max-sm:max-h-[20rem] lg:h-[33rem]">
+    <div className="mx-auto mt-8 flex w-[150vw] items-center justify-center max-sm:max-h-[20rem] lg:h-[33rem]">
       <Carousel
         plugins={[
           Autoplay({
