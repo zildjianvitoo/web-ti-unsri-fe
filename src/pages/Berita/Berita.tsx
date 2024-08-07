@@ -93,12 +93,14 @@ export default function Berita() {
             className="flex flex-col gap-4"
             href={`/berita/${berita.slug}`}
           >
-            <img
-              src={berita.thumbnail}
-              alt={berita.judul}
-              className="rounded-md"
-            />
-            <div className="flex flex-col gap-2">
+            <div className="h-3/6 w-full overflow-hidden rounded-md">
+              <img
+                src={berita.thumbnail}
+                alt={berita.judul}
+                className="h-full w-full object-cover"
+              />
+            </div>
+            <div className="flex h-3/6 flex-col gap-2">
               <h3 className="text-xl font-semibold md:text-2xl">
                 {berita.judul}
               </h3>
@@ -108,8 +110,8 @@ export default function Berita() {
                   {new Date(berita.tanggalDibuat).toLocaleDateString()}
                 </p>
               </div>
+              <p className="text-justify">{berita.konten}</p>
             </div>
-            <p className="text-justify">{berita.konten}</p>
           </a>
         ))}
       </div>
