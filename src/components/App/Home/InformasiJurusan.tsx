@@ -13,11 +13,7 @@ export default function InformasiJurusan() {
             Informasi Jurusan
           </h1>
           <h3 className="text-xl lg:text-2xl">Teknik Informatika</h3>
-          <p className="text-lg lg:text-xl">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            dignissim, metus nec fringilla accumsan, risus sem sollicitudin
-            lacus,{" "}
-          </p>
+          <p className="text-lg lg:text-xl">...</p>
           <Link
             className="mt-2 flex w-fit items-center gap-1 break-all rounded-full border bg-white px-3 py-1 text-black outline-none ring-0 lg:px-6"
             to="/profil/informasi-jurusan"
