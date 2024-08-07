@@ -82,15 +82,15 @@ export default function Pengumuman() {
                 className="flex flex-col gap-4"
                 href={`/pengumuman/${item.slug}`}
               >
-                <figure>
+                <figure className="h-4/6 w-full overflow-hidden rounded-md bg-slate-700">
                   <img
                     src={item.thumbnail}
                     alt="Dummy"
-                    className="rounded-md"
+                    className="h-full w-full object-cover"
                   />
                 </figure>
-                <div className="flex flex-col gap-2">
-                  <h3 className="text-xl font-semibold md:text-2xl">
+                <div className="flex h-2/6 flex-col gap-2">
+                  <h3 className="w-full text-2xl font-semibold !leading-7 md:text-2xl">
                     {item.judul}
                   </h3>
                   <div className="flex items-center gap-2">
@@ -99,7 +99,7 @@ export default function Pengumuman() {
                       {formatDateTimeID(item.tanggalDibuat)}
                     </p>
                   </div>
-                  <p>{item.konten}</p>
+                  <p className="line-clamp-3 text-justify">{item.konten}</p>
                 </div>
               </a>
             ))}
