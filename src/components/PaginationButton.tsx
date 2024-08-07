@@ -30,7 +30,7 @@ export default function PaginationButton({
             onClick={() => {
               pageIndex !== 1 && handlePagination(pageIndex - 1);
             }}
-            className={cn("", {
+            className={cn("cursor-pointer", {
               "cursor-not-allowed": pageIndex === 1,
             })}
           />
