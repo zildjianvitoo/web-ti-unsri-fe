@@ -26,7 +26,7 @@ export default function Pengumuman() {
       <div className="flex flex-col gap-7 lg:gap-10">
         <h1 className="text-3xl font-bold md:text-4xl">Pengumuman</h1>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-y-10">
-          {data?.map((item, index) => (
+          {data?.slice(0, 5)?.map((item, index) => (
             <Link
               className="group flex flex-col items-center gap-4 lg:flex-row"
               key={`berita-${index}`}
