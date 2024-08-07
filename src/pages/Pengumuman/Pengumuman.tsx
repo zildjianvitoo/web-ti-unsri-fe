@@ -59,8 +59,9 @@ export default function Pengumuman() {
   const paginationNumber = Math.ceil(total / 10);
 
   const handlePagination = (index: number) => {
-    if (index >= 0 && index < paginationNumber) {
-      setPageIndex(pageIndex);
+    console.log(index);
+    if (index >= 1 && index <= paginationNumber) {
+      setPageIndex(index);
       setFilters({
         pageIndex: index.toString(),
       });

@@ -20,6 +20,8 @@ export default function PaginationButton({
   paginationNumber,
   handlePagination,
 }: Props) {
+  console.log(paginationNumber);
+  console.log(pageIndex);
   return (
     <Pagination className="mt-4 flex w-full justify-center">
       <PaginationContent>
@@ -58,8 +60,8 @@ export default function PaginationButton({
             onClick={() => {
               handlePagination(pageIndex + 1);
             }}
-            className={cn("", {
-              "cursor-not-allowed": pageIndex >= paginationNumber - 1,
+            className={cn("cursor-pointer", {
+              "cursor-not-allowed": pageIndex >= paginationNumber,
             })}
           />
         </PaginationItem>
