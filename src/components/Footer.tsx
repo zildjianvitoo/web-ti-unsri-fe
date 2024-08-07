@@ -32,10 +32,8 @@ export default function Footer() {
               </figure>
 
               <p className="mt-4 text-justify text-lg leading-relaxed tracking-wide lg:mt-6 lg:w-[80%]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                eu turpis molestie, dictum est a, mattis tellus. Sed dignissim.
-                Class aptent taciti sociosqu ad litora torquent per conubia
-                nostra, per inceptos himenaeos.
+                Palembang: Jl. Masjid Al Gazali, Bukit Lama, Kec. Ilir Bar. I,
+                Kota Palembang, Sumatera Selatan 30128
               </p>
             </div>
 
