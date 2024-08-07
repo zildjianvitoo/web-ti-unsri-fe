@@ -56,10 +56,10 @@ export default function BeritaDetail() {
               className="w-full object-contain"
             />
           </figure>
-          <p
-            className="text-lg md:text-lg"
+          <div
+            className="article text-lg md:text-lg"
             dangerouslySetInnerHTML={{ __html: data?.konten || "" }}
-          ></p>
+          ></div>
         </div>
       </div>
       <div className="hidden lg:flex lg:w-2/5 lg:flex-col">
@@ -80,10 +80,10 @@ export default function BeritaDetail() {
               <h3 className="!line-clamp-1 text-lg font-semibold">
                 {item?.judul}
               </h3>
-              <p
+              <div
                 className="text-md line-clamp-3"
                 dangerouslySetInnerHTML={{ __html: item?.konten || "" }}
-              ></p>
+              ></div>
               <p className="text-sm font-medium">
                 {formatDateTimeID(item?.tanggalDibuat)}
               </p>

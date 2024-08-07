@@ -66,6 +66,12 @@
   }
 }
 
+/* p .dark {} */
+
+.article > #article-content > p {
+  margin-top: 1rem;
+}
+
 @layer base {
   * {
     @apply border-border;
