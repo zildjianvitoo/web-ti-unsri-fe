@@ -43,7 +43,6 @@ import { useState } from "react";
 
 export default function Pengumuman() {
   const [total, setTotal] = useState(0);
-  const [pageIndex, setPageIndex] = useState(1);
 
   const { filters, setFilters } = useFilters();
 
@@ -61,7 +60,6 @@ export default function Pengumuman() {
   const handlePagination = (index: number) => {
     console.log(index);
     if (index >= 1 && index <= paginationNumber) {
-      setPageIndex(index);
       setFilters({
         pageIndex: index.toString(),
       });
@@ -110,7 +108,7 @@ export default function Pengumuman() {
       </div>
       <PaginationButton
         paginationNumber={paginationNumber}
-        pageIndex={pageIndex}
+        pageIndex={+filters.pageIndex}
         handlePagination={handlePagination}
       />
     </section>

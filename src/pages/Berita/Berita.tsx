@@ -9,7 +9,6 @@ import { FaCalendar } from "react-icons/fa";
 
 export default function Berita() {
   const [total, setTotal] = useState(0);
-  const [pageIndex, setPageIndex] = useState(1);
 
   const { filters, setFilters } = useFilters();
 
@@ -27,7 +26,6 @@ export default function Berita() {
   const handlePagination = (index: number) => {
     console.log(index);
     if (index >= 1 && index <= paginationNumber) {
-      setPageIndex(index);
       setFilters({
         pageIndex: index.toString(),
       });
@@ -117,7 +115,7 @@ export default function Berita() {
       </div>
       <PaginationButton
         paginationNumber={paginationNumber}
-        pageIndex={pageIndex}
+        pageIndex={+filters.pageIndex}
         handlePagination={handlePagination}
       />
     </section>

@@ -20,8 +20,6 @@ export default function PaginationButton({
   paginationNumber,
   handlePagination,
 }: Props) {
-  console.log(paginationNumber);
-  console.log(pageIndex);
   return (
     <Pagination className="mt-4 flex w-full justify-center">
       <PaginationContent>
