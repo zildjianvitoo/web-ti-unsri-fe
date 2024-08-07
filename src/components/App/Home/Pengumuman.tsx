@@ -3,6 +3,7 @@ import LoadingScreen from "@/components/LoadingScreen";
 import formatDateTimeID from "@/lib/formatDateTimeID";
 import { getAllPengumuman } from "@/lib/network-data/pengumuman";
 import { useQuery } from "@tanstack/react-query";
+import { Link } from "react-router-dom";
 
 export default function Pengumuman() {
   const { data, isLoading, error } = useQuery({
@@ -26,9 +27,10 @@ export default function Pengumuman() {
         <h1 className="text-3xl font-bold md:text-4xl">Pengumuman</h1>
         <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:gap-y-10">
           {data?.map((item, index) => (
-            <a
+            <Link
               className="group flex flex-col items-center gap-4 lg:flex-row"
               key={`berita-${index}`}
+              to={`/pengumuman/${item.slug}`}
             >
               <figure className="h-full overflow-hidden rounded-md bg-gray-800 md:basis-[25%]">
                 <img
@@ -44,7 +46,7 @@ export default function Pengumuman() {
                   {formatDateTimeID(item.tanggalDibuat)}
                 </p>
               </div>
-            </a>
+            </Link>
           ))}
         </div>
       </div>
