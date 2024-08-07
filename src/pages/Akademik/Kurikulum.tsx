@@ -1,36 +1,42 @@
+import ErrorScreen from "@/components/ErrorScreen";
+import LoadingScreen from "@/components/LoadingScreen";
 import SectionTitle from "@/components/SectionTitle";
+import { getAllKurikulum } from "@/lib/network-data/kurikulum";
+import { useQuery } from "@tanstack/react-query";
 import { CgArrowTopRight, CgSoftwareDownload } from "react-icons/cg";
 
 export default function Kurikulum() {
+  const { data, isLoading, error } = useQuery({
+    queryFn: getAllKurikulum,
+    queryKey: ["kurikulum"],
+  });
+
+  if (isLoading) return <LoadingScreen />;
+
+  if (error) return <ErrorScreen />;
+
   return (
     <>
       <section id="informasi-jurusan">
         <div className="flex flex-col gap-8 lg:gap-10">
           <SectionTitle title="Kurikulum" />
         </div>
-        <div className="mt-10 flex h-full w-full flex-col gap-10 px-4 md:gap-14 lg:px-12 xl:px-20">
-          {Array.from({ length: 2 }).map((item, index) => (
+        <div className="mt-10 flex h-full w-full flex-col gap-10 px-4 md:gap-14 lg:w-4/5 lg:px-12 xl:px-20">
+          {data?.map((item, index) => (
             <div className="flex flex-col gap-2" key={index + "kurikulum"}>
               <h1 className="w-fit bg-gradient-to-r from-secondary-100 to-primary-100 bg-clip-text text-2xl font-bold text-transparent lg:text-5xl">
-                Kurikulum 2019
+                {item.nama}
               </h1>
-              <p className="text-sm lg:text-lg">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam
-                eu turpis molestie, dictum est a, mattis tellus. Sed dignissim,
-                metus nec fringilla accumsan, risus sem sollicitudin lacus, ut
-                interdum tellus elit sed risus. Maecenas eget condimentum velit,
-                sit amet feugiat lectus. Class aptent taciti sociosqu ad litora
-                torquent per conubia nostra, per inceptos himenaeos.
-              </p>
+              <p className="text-sm lg:text-lg">{item.deskripsi}</p>
               <div className="flex flex-row gap-2">
-                <button className="flex items-center justify-between gap-2 rounded-full bg-green-400 px-4 py-1 font-medium text-white max-md:text-sm">
-                  Tinjau
-                  <CgArrowTopRight className="text-xl" />
-                </button>
-                <button className="flex justify-between gap-2 rounded-full bg-red-400 px-4 py-1 font-medium text-white max-md:text-sm">
+                <a
+                  className="flex justify-between gap-2 rounded-full bg-red-400 px-4 py-1 font-medium text-white max-md:text-sm"
+                  href={item.file}
+                  download
+                >
                   Unduh
                   <CgSoftwareDownload className="text-xl" />
-                </button>
+                </a>
               </div>
             </div>
           ))}
