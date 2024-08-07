@@ -8,8 +8,15 @@ export default function ProfilJurusan() {
         <h1 className="text-center text-3xl font-bold md:text-4xl">
           Profil Jurusan
         </h1>
-
-        <div className="h-40 rounded-md bg-slate-400"></div>
+        <div className="mx-auto w-3/5">
+          <div className="aspect-video">
+            <iframe
+              src="https://drive.google.com/file/d/1Fyr1gf4frpPBYFt1qa4q1LfGz5YPqtlY/preview"
+              allow="autoplay"
+              className="h-full w-full overflow-hidden rounded-md"
+            ></iframe>
+          </div>
+        </div>
       </div>
     </section>
   );
