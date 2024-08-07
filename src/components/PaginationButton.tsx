@@ -16,10 +16,11 @@ type Props = {
 };
 
 export default function PaginationButton({
-  pageIndex,
+  pageIndex = 1,
   paginationNumber,
   handlePagination,
 }: Props) {
+  console.log(pageIndex);
   return (
     <Pagination className="mt-4 flex w-full justify-center">
       <PaginationContent>

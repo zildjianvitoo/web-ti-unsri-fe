@@ -117,7 +117,7 @@ export default function Berita() {
       </div>
       <PaginationButton
         paginationNumber={paginationNumber}
-        pageIndex={+filters.pageIndex}
+        pageIndex={filters.pageIndex ? +filters.pageIndex : 1}
         handlePagination={handlePagination}
       />
     </section>
