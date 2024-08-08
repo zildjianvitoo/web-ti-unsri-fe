@@ -31,9 +31,13 @@ export default function Footer() {
                 />
               </figure>
 
-              <p className="mt-4 text-justify text-lg leading-relaxed tracking-wide lg:mt-6 lg:w-[80%]">
+              <p className="mt-4 text-justify text-base leading-relaxed tracking-wide lg:mt-6 lg:w-[80%]">
                 Palembang: Jl. Masjid Al Gazali, Bukit Lama, Kec. Ilir Bar. I,
                 Kota Palembang, Sumatera Selatan 30128
+              </p>
+              <p className="text-justify text-base leading-relaxed tracking-wide lg:w-[80%]">
+                Indralaya: Jl. Raya Palembang - Prabumulih No.KM. 32, Indralaya
+                Indah, Indralaya, Ogan Ilir Regency, South Sumatra 30862
               </p>
             </div>
 
