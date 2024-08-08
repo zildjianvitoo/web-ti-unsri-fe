@@ -9,9 +9,11 @@ export default function VisiMisi() {
     queryKey: ["informasi-jurusan"],
   });
 
-  if (isLoading) return <LoadingScreen />;
+  if (!data || isLoading) return <LoadingScreen />;
 
   if (error) return <ErrorScreen />;
+
+  console.log(error);
 
   return (
     <section id="visi-misi" className="mt-14">

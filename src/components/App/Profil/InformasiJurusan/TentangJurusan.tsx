@@ -1,4 +1,4 @@
-import img from "@/../public/images/image-dummy1.png";
+import img from "@/../public/images/fasilkom.jpg";
 import ErrorScreen from "@/components/ErrorScreen";
 import LoadingScreen from "@/components/LoadingScreen";
 import { getAllInformasiJurusan } from "@/lib/network-data/informasiJurusan";
@@ -10,7 +10,7 @@ export default function TentangJurusan() {
     queryKey: ["informasi-jurusan"],
   });
 
-  if (isLoading) return <LoadingScreen />;
+  if (!data || isLoading) return <LoadingScreen />;
 
   if (error) return <ErrorScreen />;
 
@@ -19,7 +19,7 @@ export default function TentangJurusan() {
       id="tentang-jurusan"
       className="mt-20 flex w-full flex-col gap-4 px-4 md:gap-8 lg:flex-row lg:px-12 xl:px-20"
     >
-      <div className="overflow-hidden rounded-2xl lg:w-3/6 xl:w-2/6">
+      <div className="max-h-[50vh] overflow-hidden rounded-2xl lg:w-3/6 xl:w-2/6">
         <img
           src={img}
           alt="img-informasijurusan"
@@ -33,7 +33,10 @@ export default function TentangJurusan() {
         <h3 className="mb-2 text-center text-lg font-semibold md:text-start md:text-xl lg:mb-0">
           Universitas Sriwijaya
         </h3>
-        <p>{data?.informasi}</p>
+        <div
+          className="text-justify"
+          dangerouslySetInnerHTML={{ __html: data?.informasi || "" }}
+        ></div>
       </div>
     </section>
   );
