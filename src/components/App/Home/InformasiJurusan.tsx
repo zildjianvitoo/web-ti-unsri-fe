@@ -28,7 +28,7 @@ export default function InformasiJurusan() {
           </h1>
           <h3 className="text-xl lg:text-2xl">Teknik Informatika</h3>
           <div
-            className="line-clamp-2 text-justify"
+            className="line-clamp-3 text-justify"
             dangerouslySetInnerHTML={{ __html: data?.informasi || "" }}
           ></div>
           <Link
