@@ -3,7 +3,6 @@ import LoadingScreen from "@/components/LoadingScreen";
 import SectionTitle from "@/components/SectionTitle";
 import { getAllKurikulum } from "@/lib/network-data/kurikulum";
 import { useQuery } from "@tanstack/react-query";
-import { CgArrowTopRight, CgSoftwareDownload } from "react-icons/cg";
 
 export default function Kurikulum() {
   const { data, isLoading, error } = useQuery({
