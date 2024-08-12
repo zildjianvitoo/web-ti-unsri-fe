@@ -9,7 +9,7 @@ import { CgArrowTopRight } from "react-icons/cg";
 export default function PanduanSOP() {
   const { data, isLoading, error } = useQuery({
     queryFn: getPanduanSOP,
-    queryKey: ["kurikulum"],
+    queryKey: ["panduan-dan-sop"],
   });
 
   if (isLoading) return <LoadingScreen />;
@@ -27,7 +27,13 @@ export default function PanduanSOP() {
             <h1 className="w-fit bg-gradient-to-r from-secondary-100 to-primary-100 bg-clip-text text-2xl font-bold text-transparent lg:text-5xl">
               Panduan
             </h1>
-            <p className="text-sm lg:text-lg">Lorem</p>
+            <p className="text-sm lg:max-w-screen-2xl lg:text-lg">
+              Panduan Kampus Universitas adalah dokumen atau referensi yang
+              disediakan oleh sebuah universitas untuk membantu mahasiswa,
+              dosen, dan staf dalam memahami berbagai aturan, prosedur,
+              fasilitas, dan layanan yang ada di kampus. Panduan ini biasanya
+              mencakup informasi tentang hal-hal berikut:
+            </p>
             <div className="lg:gap- grid grid-flow-row grid-cols-1 gap-2 lg:grid-cols-2">
               {data?.panduan.map((item, index) => (
                 <a
@@ -51,7 +57,15 @@ export default function PanduanSOP() {
             <h1 className="w-fit bg-gradient-to-r from-secondary-100 to-primary-100 bg-clip-text text-2xl font-bold text-transparent lg:text-5xl">
               Standar Operasional Prosedur
             </h1>
-            <p className="text-sm lg:text-lg">Lorem</p>
+            <p className="text-sm lg:max-w-screen-2xl lg:text-lg">
+              SOP (Standard Operating Procedure) Kampus adalah serangkaian
+              panduan dan instruksi yang dirancang untuk memastikan bahwa
+              berbagai proses dan kegiatan di kampus berjalan dengan konsisten,
+              efisien, dan sesuai dengan standar yang telah ditetapkan. SOP
+              Kampus mencakup prosedur operasional untuk berbagai aspek, seperti
+              akademik, administrasi, manajemen fasilitas, dan layanan lainnya
+              yang ada di kampus.
+            </p>
             <div className="lg:gap- grid grid-flow-row grid-cols-1 gap-2 lg:grid-cols-2">
               {data?.sop.map((item, index) => (
                 <a
